@@ -57,7 +57,7 @@ function agregarProductos() {
 
     if (usuarioQuiereUsarCupon.trim().toLowerCase() === RESPUESTA_POSITIVA) {
         let porcentajeDescuento = 20;
-        aplicarDescuento(total, porcentajeDescuento);
+        alert('Usted tendria que pagar un total de $' + aplicarDescuento(total, porcentajeDescuento));
     } else{
         alert('Usted tendría que pagar un total de $' + total);
     }
@@ -70,6 +70,8 @@ function aplicarDescuento (valorOriginal, porcentajeDescuento) {
     return valorConDescuento;
 }
 
+const botonIniciar = document.getElementById('iniciar-simulacion');
 
-
-preguntarUsuarioSiCompra();
+botonIniciar.addEventListener('click', function() {
+    preguntarUsuarioSiCompra();
+});

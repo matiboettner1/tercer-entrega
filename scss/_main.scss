@@ -1,0 +1,29 @@
+h2 {
+    color: white;
+    text-align: center;
+    font-family: 'Poppins';
+}
+
+#iniciar-simulacion {
+    background-color: rgb(62, 123, 255);
+    color: white;
+    width: fit-content;
+    border: none;
+    padding: 15px;
+	border-radius: 8px;
+	font-weight: bold;
+	font-size: 1.5625rem;
+	cursor: pointer;
+	transition: all 0.3s ease 0s;
+
+	&:hover {
+		background-color: rgb(92, 143, 253);
+	}
+}
+
+.boton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
