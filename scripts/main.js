@@ -1,4 +1,4 @@
-const usuariosRegistrados = [
+/*const usuariosRegistrados = [
   {
     usuario: 'matias',
     contrasenia: 'boettner',
@@ -154,3 +154,4 @@ const botonIniciar = document.getElementById('iniciar-simulacion');
 botonIniciar.onclick = () => {
     iniciarSimulacion();
 };
+*/
