@@ -11,29 +11,32 @@ miFormulario.addEventListener('submit', (e) => {
     
     const unUsuario = getUser(usuarios, userName);
     if(!unUsuario) {
-        alert('el usuario o contrasenia ingresados no existe');
+        showErrorMessages(errorMessage, message = 'El usuario o contraseña ingresados no existe.');
         return false;
     }
 
     if (!unUsuario.isPassword(password)) {
-        alert('el usuario o contrasenia ingresados no existe');
+        showErrorMessages(errorMessage, message = 'El usuario o contraseña ingresados no existe.');
         return false;
     }
 
     unUsuario.isLogged = true;
     registrarLogin(unUsuario);
-    window.location = '/index.html'
+    showSuccessfulMessage(successfulMessage, message = 'Inicio de sesion exitoso.');
+        setTimeout(() => {
+            window.location.href = '/index.html';
+        }, 1200);
 });
 
 const validarFormulario = (userName, password) => {
     
     if (userName.length == 0) {
-        alert('debes completar todos los campos');
+        showErrorMessages(errorMessage, message = 'Debes completar todos los campos.');
         return false;
       }
     
       if (password.length == 0) {
-        alert('debes completar todos los campos');
+        showErrorMessages(errorMessage, message = 'Debes completar todos los campos.');
         return false;
       }
     

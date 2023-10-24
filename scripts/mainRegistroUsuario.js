@@ -8,8 +8,10 @@ miFormulario.addEventListener('submit', (e) => {
 
     if (registrarUsuario(userName, password, repeatPassword)) {
         miFormulario.reset();
-        alert('usuario correctamente registrado')
-        window.location = '/pages/login-usuario.html';
+        showSuccessfulMessage(successfulMessage, message = 'Usuario registrado correctamente.');
+        setTimeout(() => {
+            window.location.href = '/pages/login-usuario.html';
+        }, 1200);
     }
 });
 
@@ -19,29 +21,29 @@ const PASSWORD_MIN_CHARACTERS = 4;
 
 const validarFormulario = (userName = '', password = '', repeatPassword = '') => {
     if (userName.length === 0) {
-        alert('debes completar todos los campos');
+        showErrorMessages(errorMessage, message = 'Debes completar todos los campos.');
         return false;
     }
     if (password.length === 0) {
-        alert('debes completar todos los campos');
+        showErrorMessages(errorMessage, message = 'Debes completar todos los campos.');
         return false;
     }
     if (repeatPassword.length === 0) {
-        alert('debes completar todos los campos');
+        showErrorMessages(errorMessage, message = 'Debes completar todos los campos.');
         return false;
     }
 
     if (userName.length < USERNAME_MIN_CHARACTERS) {
-        alert(`debes ingresar al menos ${USERNAME_MIN_CHARACTERS} caracteres en el username`);
+        showErrorMessages(errorMessage, message = `Debes ingresar al menos ${USERNAME_MIN_CHARACTERS} caracteres en el username.`);
         return false;
     }
     if (password.length < PASSWORD_MIN_CHARACTERS) {
-        alert(`debes ingresar al menos ${PASSWORD_MIN_CHARACTERS} caracteres en la contrasenia`);
+        showErrorMessages(errorMessage, message = `Debes ingresar al menos ${PASSWORD_MIN_CHARACTERS} caracteres en la contraseña.`);
         return false;
     }
 
     if (password !== repeatPassword) {
-        alert('las contrasenias no coinciden');
+        showErrorMessages(errorMessage, message = 'Las contraseñas no coinciden.');
         return false;
     }
 
@@ -56,7 +58,7 @@ const registrarUsuario = (userName, password, repeatPassword) => {
     }
 
     if (isUserExist(usuarios, userName)) {
-        alert('el nombre de usuario ingresado ya existe');
+        showErrorMessages(errorMessage, message = 'El nombre de usuario ingresado ya existe.');
         return false;
     }
 

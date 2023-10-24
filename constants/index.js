@@ -38,3 +38,20 @@ const USER_LOGGED = recoverLoggedUser();
 const isLoggedUser = () => {
     return !!USER_LOGGED;
 }
+
+// PINTAR MENSAJES
+
+const showErrorMessages = (errorMessage, message) => {
+    let messageContainer = document.getElementById('errorMessage');
+    messageContainer.style.display = 'flex';
+    messageContainer.innerHTML = `<h2>${message}<h2>`;
+    setTimeout(() => {
+        messageContainer.style.display = 'none';
+    }, 1500);
+}
+
+const showSuccessfulMessage = (successfulMessage, message) => {
+    let messageContainer = document.getElementById('successfulMessage');
+    messageContainer.style.display = 'flex';
+    messageContainer.innerHTML = `<h2>${message}<h2>`;
+}
