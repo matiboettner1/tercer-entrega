@@ -35,11 +35,9 @@ const recoverLoggedUser = () => {
 
 const USER_LOGGED = recoverLoggedUser();
 
-const isLoggedUser = () => {
+const isUserLogged = () => {
     return !!USER_LOGGED;
 }
-
-// PINTAR MENSAJES
 
 const showErrorMessages = (errorMessage, message) => {
     let messageContainer = document.getElementById('errorMessage');

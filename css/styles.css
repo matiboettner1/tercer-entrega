@@ -1,48 +1,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Poppins:wght@300&display=swap");
-body {
-  background-color: whitesmoke;
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif, "Open sans";
+  box-sizing: border-box;
 }
 
-h1 {
-  color: white;
-  text-align: center;
-  font-family: "Poppins";
-  font-size: 30px;
+a:link {
+  color: black;
+  text-decoration: none;
 }
 
-h2 {
-  color: white;
-  text-align: center;
-  font-family: "Poppins";
+a:visited {
+  text-decoration: none;
+  color: black;
 }
 
-#iniciar-simulacion {
-  background-color: rgb(62, 123, 255);
-  color: white;
-  width: fit-content;
+ul {
+  list-style: none;
+}
+
+button {
   border: none;
-  padding: 15px;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 1.5625rem;
+  background: none;
   cursor: pointer;
-  transition: all 0.3s ease 0s;
-}
-#iniciar-simulacion:hover {
-  background-color: rgb(92, 143, 253);
 }
 
-.boton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-
-h3 {
-  color: white;
-  text-align: center;
-  font-family: "Poppins";
+body {
+  margin-top: 110px;
 }
 
 .formulario {
@@ -51,24 +36,40 @@ h3 {
   align-items: center;
   font-family: "Poppins";
 }
-
-label {
+.formulario h1 {
+  color: black;
+  font-size: 30px;
+  margin-bottom: 50px;
+}
+.formulario label {
   display: flex;
   flex-direction: column;
   font-size: 20px;
 }
-
-input {
+.formulario input {
   margin: 5px;
   padding: 5px;
   border-radius: 5px;
   border: none;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
   width: 300px;
   height: 30px;
 }
-
-h1 {
-  color: black;
+.formulario button {
+  background-color: rgb(62, 123, 255);
+  color: white;
+  width: fit-content;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  margin: 10px;
+}
+.formulario button:hover {
+  background-color: rgb(92, 143, 253);
 }
 
 .usuario-registrado {
@@ -80,23 +81,26 @@ h1 {
 }
 .usuario-registrado h3 {
   color: black;
+  font-size: 15px;
 }
-
-button {
-  background-color: rgb(62, 123, 255);
-  color: white;
+.usuario-registrado a {
+  margin: 15px;
   width: fit-content;
-  border: none;
-  padding: 15px;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 1.5625rem;
-  cursor: pointer;
-  transition: all 0.3s ease 0s;
-  margin: 10px;
+  text-align: center;
+  position: relative;
 }
-button:hover {
-  background-color: rgb(92, 143, 253);
+.usuario-registrado a::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: rgb(0, 0, 0);
+  transition: 0.3s;
+}
+.usuario-registrado a:hover::before {
+  width: 100%;
 }
 
 #errorMessage {
@@ -127,6 +131,204 @@ button:hover {
 #successfulMessage h2 {
   font-size: 15px;
   color: rgb(70, 206, 52);
+}
+
+nav {
+  background-color: #fff8ea;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 10px 10px;
+  width: 100%;
+  z-index: 100;
+  font-weight: bold;
+  text-decoration: none;
+}
+nav li {
+  list-style: none;
+  display: flex;
+}
+
+.productos,
+.carrito,
+.iniciar-sesion {
+  margin: 15px;
+  width: fit-content;
+  text-align: center;
+  position: relative;
+}
+.productos::before,
+.carrito::before,
+.iniciar-sesion::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: rgb(0, 0, 0);
+  transition: 0.3s;
+}
+.productos:hover::before,
+.carrito:hover::before,
+.iniciar-sesion:hover::before {
+  width: 100%;
+}
+
+.nav__menu {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+  margin: 1rem;
+}
+.nav__menu a {
+  text-decoration: none;
+  color: initial;
+  font-size: 1.2rem;
+}
+
+.logo-inicio {
+  margin-right: auto;
+  display: flex;
+  position: relative;
+}
+.logo-inicio .logo {
+  width: 50px;
+  object-fit: cover;
+  cursor: pointer;
+}
+.logo-inicio .texto-logo {
+  display: flex;
+  position: relative;
+  top: 16px;
+  left: 9px;
+  cursor: default;
+}
+
+h3 {
+  text-align: center;
+  font-size: 30px;
+}
+
+#productos-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "producto1 producto2 producto3" "producto4 producto5 producto6";
+  justify-items: center;
+  justify-content: space-around;
+  gap: 40px;
+  margin: 40px;
+}
+
+#producto {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background-color: whitesmoke;
+  width: 300px;
+  height: fit-content;
+  border-radius: 10px;
+}
+#producto h2 {
+  text-align: center;
+  margin: 5px;
+  width: 100%;
+}
+#producto button {
+  background-color: rgb(62, 123, 255);
+  color: white;
+  width: fit-content;
+  border: none;
+  padding: 5px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 17px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  margin: 5px;
+}
+#producto button:hover {
+  background-color: rgb(92, 143, 253);
+}
+#producto img {
+  width: 300px;
+  height: 300px;
+}
+#producto p {
+  text-align: center;
+  width: 100%;
+}
+
+#cart {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "resumen-compra cart-products";
+  justify-items: center;
+  justify-content: space-around;
+  gap: 40px;
+  margin: 20px;
+}
+#cart .resumen-compra {
+  grid-area: "resumen-compra";
+  width: 500px;
+}
+#cart .resumen-compra h4 {
+  margin: 10px;
+  font-size: 25px;
+}
+#cart .resumen-compra p {
+  margin: 10px;
+}
+#cart .resumen-compra button {
+  background-color: rgb(62, 123, 255);
+  color: white;
+  width: fit-content;
+  border: none;
+  padding: 5px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 17px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  margin: 5px;
+  justify-content: center;
+}
+#cart .resumen-compra button:hover {
+  background-color: rgb(92, 143, 253);
+}
+#cart #cart-products {
+  grid-area: "cart-products";
+  width: 500px;
+}
+#cart #cart-products .cart-product {
+  display: flex;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: whitesmoke;
+}
+#cart #cart-products .cart-product img {
+  width: 150px;
+  height: 100%;
+  border-radius: 5px;
+}
+#cart #cart-products .cart-product .info-product {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+#cart #cart-products .cart-product .info-product h3 {
+  font-size: 18px;
+  text-align: center;
+}
+#cart #cart-products .cart-product .info-product p {
+  font-size: 15px;
+  text-align: center;
 }
 
 /*# sourceMappingURL=styles.css.map */

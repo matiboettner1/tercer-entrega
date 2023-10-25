@@ -1,26 +1,106 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Simulador de compras</title>
+    <title>Carrito de compras</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='./css/styles.css'>
 </head>
+
 <body>
-    <nav>
-        <h1>Simulador de compra de budines</h1>
-    </nav>
+    <header>
+        <nav class="nav">
+            <ul class="nav__menu">
+                <li class="logo-inicio">
+                    <a href="./index.html">
+                        <img src="./media/img/logo-hechoencasa.png" class="logo" alt="logo de hecho en casa">
+                    </a>
+                    <p class="texto-logo">hechoencasa.cb</p>
+                </li>
+                <li class="productos">
+                    <a href="#section-productos">Productos</a>
+                </li>
+                <li class="carrito">
+                    <a href="#section-carrito">Carrito</a>
+                </li>
+                <li class="iniciar-sesion">
+                    <a href="./pages/login-usuario.html">Iniciar sesion</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
     <main>
-        <h2>Presione este boton para iniciar la simulacion</h2>
-        <div class="boton">
-            <button type="button" id="iniciar-simulacion">Iniciar</button>
-        </div>
+        <section>
+            <div>
+                <h3 id="section-productos">Productos</h3>
+                <hr>
+                <ul id="productos-container">
+                    <li id="producto">
+                        <img src="./media/img/budin-de-frutos-rojos.jpg">
+                        <h2 class="productName">Budin de Frutos Rojos</h2>
+                        <p class="product-price">$1500</p>
+                        <button type="button" class="addButton">Agregar</button>
+                    </li>
+                    <li id="producto">
+                        <img src="./media/img/budin-de-naranja.jpg">
+                        <h2 class="productName">Budin de Naranja</h2>
+                        <p class="product-price">$1500</p>
+                        <button type="button" class="addButton">Agregar</button>
+                    </li>
+                    <li id="producto">
+                        <img src="./media/img/budin-de-zanahoria.jpg">
+                        <h2 class="productName">Budin de Zanahoria</h2>
+                        <p class="product-price">$1500</p>
+                        <button type="button" class="addButton">Agregar</button>
+                    </li>
+                    <li id="producto">
+                        <img src="./media/img/muffin-de-banana.jpg">
+                        <h2 class="productName">Muffin de Banana</h2>
+                        <p class="product-price">$500</p>
+                        <button type="button" class="addButton">Agregar</button>
+                    </li>
+                    <li id="producto">
+                        <img src="./media/img/muffin-de-coco.jpg">
+                        <h2 class="productName">Muffin de Coco</h2>
+                        <p class="product-price">$500</p>
+                        <button type="button" class="addButton">Agregar</button>
+                    </li>
+                    <li id="producto">
+                        <img src="./media/img/muffin-de-frutos-rojos.jpg">
+                        <h2 class="productName">Muffin de Frutos rojos</h2>
+                        <p class="product-price">$500</p>
+                        <button type="button" class="addButton">Agregar</button>
+                    </li>
+                </ul>
+        </section>
+        <section>
+            <h3 id="section-carrito">Carrito</h3>
+            <hr>
+            <div id="cart">
+                <div class="resumen-compra">
+                    <h4>Resumen de compra</h4>
+                    <hr>
+                    <p>Total: $<strong id="totalPrice">0</strong></p>
+                    <hr>
+                    <button type="button">Comprar</button>
+                </div>
+                <div id="cart-products">
+
+                </div>
+            </div>
+        </section>
     </main>
+    <hr>
     <footer>
-        <h3>Segunda entrega - Matias Boettner</h3>
-    </footer>    
+        <h3>Tercer entrega - Matias Boettner</h3>
+    </footer>
     
-    <script src="main.js"></script>
+    <script src="./classes/usuario.js"></script>
+    <script src="./constants/index.js"></script>
+    <script src="./scripts/main.js"></script>
 </body>
+
 </html>

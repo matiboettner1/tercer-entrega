@@ -1,6 +1,82 @@
-h1 {
-    color: white;
+nav {
+    background-color: #fff8ea;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px 10px;
+    width: 100%;
+    z-index: 100;
+    font-weight: bold;
+    text-decoration: none;
+
+    li {
+        list-style: none;
+        display: flex;
+    }
+}
+
+@mixin animacion-paginas {
+    margin: 15px;
+    width: fit-content;
     text-align: center;
-    font-family: 'Poppins';
-    font-size: 30px;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: rgb(0, 0, 0);
+        transition: .3s;
+    }
+
+    &:hover {
+        &::before {
+            width: 100%;
+        }
+    }
+}
+
+.productos,
+.carrito,
+.iniciar-sesion {
+    @include animacion-paginas();
+}
+
+.nav__menu {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+    margin: 1rem;
+
+    a {
+        text-decoration: none;
+        color: initial;
+        font-size: 1.2rem;
+    }
+}
+
+.logo-inicio {
+    margin-right: auto;
+    display: flex;
+    position: relative;
+
+    .logo {
+        width: 50px;
+        object-fit: cover;
+        cursor: pointer;
+    }
+
+    .texto-logo {
+        display: flex;
+        position: relative;
+        top: 16px;
+        left: 9px;
+        cursor: default;
+    }
+
 }
