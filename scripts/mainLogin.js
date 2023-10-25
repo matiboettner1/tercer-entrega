@@ -24,7 +24,7 @@ miFormulario.addEventListener('submit', (e) => {
     registrarLogin(unUsuario);
     showSuccessfulMessage(successfulMessage, message = 'Inicio de sesion exitoso.');
         setTimeout(() => {
-            window.location.href = '/index.html';
+            window.location.href = '../index.html';
         }, 1200);
 });
 

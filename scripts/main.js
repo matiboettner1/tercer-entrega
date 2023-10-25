@@ -8,7 +8,7 @@ const productsList = document.getElementById('productos-container');
 productsList.addEventListener('click', (e) => {
   if (e.target.classList.contains('addButton')) {
     if (!isUserLogged()) {
-      window.location = '/pages/login-usuario.html';
+      window.location.href = './pages/login-usuario.html';
       return;
     }
     const product = e.target.parentElement;

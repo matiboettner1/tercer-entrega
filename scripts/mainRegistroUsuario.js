@@ -10,7 +10,7 @@ miFormulario.addEventListener('submit', (e) => {
         miFormulario.reset();
         showSuccessfulMessage(successfulMessage, message = 'Usuario registrado correctamente.');
         setTimeout(() => {
-            window.location.href = '/pages/login-usuario.html';
+            window.location.href = './login-usuario.html';
         }, 1200);
     }
 });

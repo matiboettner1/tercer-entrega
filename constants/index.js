@@ -13,7 +13,7 @@ const recoverStorageList = () => {
     }
 }
 
-let usuarios = recoverStorageList();
+let usuarios = recoverStorageList() || [];
 
 const isUserExist = (usuarios = [], identificador = '') => {
     return usuarios.some((unUsuario) => unUsuario.userName.toLowerCase() === identificador.toLowerCase());
