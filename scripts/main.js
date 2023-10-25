@@ -38,6 +38,16 @@ productsList.addEventListener('click', (e) => {
   }
 });
 
+cartProducts.addEventListener('click', (e) => {
+  if(e.target.classList.contains('icon-close')){
+    const product = e.target.parentElement;
+    const name = product.querySelector('h3').textContent;
+
+    cart = cart.filter(product => product.name !== name);
+    showHTMLProducts();
+  }
+});
+
 const showHTMLProducts = () => {
   cartProducts.innerHTML = '';
 
@@ -50,6 +60,7 @@ const showHTMLProducts = () => {
     containerProduct.innerHTML = `
         <img src="./media/img/${getImageName(product.name)}">
         <div class="info-product">
+          <button type="button" class="icon-close">X</button>  
           <h3 class="productName">${product.name}</h3>
           <p class="quantity">Cantidad: ${product.quantity}</p>
           <p class="price">${product.price} c/u</p>
